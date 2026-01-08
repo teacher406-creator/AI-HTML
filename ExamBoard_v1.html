@@ -62,8 +62,12 @@
             { type: 'break', start: '09:25', end: '09:30', label: '收書準備應考' },
             { type: 'exam',  start: '09:30', end: '10:10', label: '第二節' },
             { type: 'break', start: '10:10', end: '10:30', label: '下課 (大)' },
-            { type: 'exam',  start: '10:30', end: '11:10', label: '第三節' },
-            { type: 'break', start: '11:10', end: '11:20', label: '收卷' }
+            { type: 'exam',  start: '10:50', end: '11:50', label: '第三節' },
+            { type: 'exam',  start: '13:05', end: '13:55', label: '自習' },
+            { type: 'exam', start: '14:00', end: '14:50', label: '自習' },
+            { type: 'exam',  start: '14:45', end: '14:50', label: '收書準備應考' },
+            { type: 'exam', start: '14:50', end: '15:50', label: '第四節' },
+            { type: 'exam',  start: '10:30', end: '11:10', label: '第六節' },
         ];
 
         // 僅提取考試時段供 A 區顯示使用
@@ -75,15 +79,15 @@
             "不會寫的題目跳過寫會的題目",
             "耐心、細心、小心",
             "考卷有不會的問題等出題老師來了再問",
-            "不要轉頭玩東西，寫完多檢查",
-            "檢查完再檢查或趴下休息",
+            "寫完多檢查",
+            "檢查完再檢查，不要趴睡",
             "考試即將結束，檢查有沒有寫答案抄錯"
         ];
 
         const BREAK_MESSAGES = [
             "等監考老師點完再離開座位下課",
             "利用下課準備下個科目與文具用品",
-            "提早上廁所喝水",
+            "利用下課時段上廁所",
             "桌面淨空",
             "準備考試、收拾位置、坐在位置上"
         ];
@@ -130,7 +134,7 @@
                     return parsed;
                 }
                 return {
-                    subjects: ["英語寫作", "數學", "英文"],
+                    subjects: ["英語寫作", "數學", "地理", "自習", "自習", "公民"],
                     shouldArrive: "",
                     actualArrive: "",
                     absentList: ""
