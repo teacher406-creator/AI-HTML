@@ -62,7 +62,11 @@
             { type: 'exam',  start: '09:30', end: '10:10', label: '第二節' },
             { type: 'break', start: '10:10', end: '10:50', label: '收書準備應考' },
             { type: 'exam',  start: '10:50', end: '11:50', label: '第三節' },
-            { type: 'break', start: '11:50', end: '12:10', label: '下課用餐' },
+            { type: 'break', start: '11:50', end: '13:05', label: '下課用餐、午休' },
+            { type: 'exam',  start: '13:05', end: '14:40', label: '第四節' },
+            { type: 'exam',  start: '14:40', end: '14:50', label: '收書準備應考' },
+            { type: 'exam',  start: '14:50', end: '15:50', label: '第五節' },
+            { type: 'break', start: '15:50', end: '16:10', label: '樂活' },
         ];
 
         // 僅提取考試時段供 A 區顯示使用
@@ -115,7 +119,7 @@
             const audioRefs = useRef([]);
             const fileInputRefs = useRef([]);
 
-            // A區資料：科目(陣列)、應到、實到、未到
+            // A區資料：科目(陣列)、應到、實到、未到、特殊考場
             const [examData, setExamData] = useState(() => {
                 const saved = localStorage.getItem('exam_data');
                 if (saved) {
@@ -129,7 +133,7 @@
                     return parsed;
                 }
                 return {
-                    subjects: ["第一節", "第二節", "第三節"],
+                    subjects: ["第一節", "第二節", "第三節", "第四節", "第五節"],
                     shouldArrive: "",
                     actualArrive: "",
                     absentList: ""
