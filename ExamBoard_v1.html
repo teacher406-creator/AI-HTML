@@ -56,9 +56,10 @@
         // --- 設定資料 ---
         // 完整的時間表
         const SCHEDULE = [
-            { type: 'break', start: '08:30', end: '08:40', label: '準備' },
-            { type: 'exam',  start: '08:40', end: '09:20', label: '第一節' },
-            { type: 'break', start: '09:20', end: '09:30', label: '下課' },
+            { type: 'break', start: '08:25', end: '08:30', label: '收書準備應考' },
+            { type: 'exam',  start: '08:30', end: '09:10', label: '第一節' },
+            { type: 'break', start: '09:10', end: '09:20', label: '下課' },
+            { type: 'break', start: '09:25', end: '09:30', label: '收書準備應考' },
             { type: 'exam',  start: '09:30', end: '10:10', label: '第二節' },
             { type: 'break', start: '10:10', end: '10:30', label: '下課 (大)' },
             { type: 'exam',  start: '10:30', end: '11:10', label: '第三節' },
@@ -129,7 +130,7 @@
                     return parsed;
                 }
                 return {
-                    subjects: ["國語", "數學", "英文"],
+                    subjects: ["英語寫作", "數學", "英文"],
                     shouldArrive: "",
                     actualArrive: "",
                     absentList: ""
@@ -246,10 +247,10 @@
                         statusText = "休息時間";
                     } else if (remainingMs > 3 * 60000) {
                         colorClass = 'stroke-yellow-400';
-                        statusText = "快去上廁所喝水";
+                        statusText = "快去上廁所";
                     } else {
                         colorClass = 'stroke-red-500';
-                        statusText = "請收拾東西在座位上坐好";
+                        statusText = "收書在座位安靜坐好";
                     }
                 }
 
@@ -566,7 +567,7 @@
                                 提醒事項
                             </div>
                             <div className="flex-1 flex items-center justify-center p-12">
-                                {/* 字體放大至 5vw */}
+                                {/* 字體放大至 8vw */}
                                 <div className="text-[5vw] font-bold text-center leading-snug text-gray-800 animate-fade-in key={reminderMessage}">
                                     {reminderMessage}
                                 </div>
